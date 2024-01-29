@@ -12,7 +12,3 @@
 | 2. Executar o projeto          | [Executar.MD](/readme/EXECUTAR.MD)     |
 | 3. Configurar o ambiente       | [Config.MD](/readme/CONFIG.MD)         | 
 | 4. Referências                 | [Referencia.MD](/readme/REFERENCIA.MD) |                              |
-
-## 3.0 Referências
-
-- [Curso Full Cycle](https://fullcycle.com.br/);
