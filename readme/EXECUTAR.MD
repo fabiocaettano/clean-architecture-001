@@ -11,16 +11,43 @@ O projeto foi executado na seguinte configuração:
 
 Executar:
 
+Provisionar máquina virtual:
 ```
-# clonar o projeto
-git clone https://github.com/fabiocaettano/ddd-001.git
+terraform apply -auto-approve
+```
 
-# entrar no diretório
-cd ddd-001
+Visualizar o IP provisionado:
+```
+terraform output
+```
 
-# instalar as dependências
+Enviar o arquivo o arquivo ssh da máquina local para máquina remota:
+```
+ssh-agent bash
+ssh-agent add ~/.ssh/arquivo
+scp ~/.ssh/arquivo root@ipDaMaquinaRemota:/root/.ssh/
+scp ~/.ssh/arquivo.pub root@ipDaMaquinaRemota:/root/.ssh/
+```
+
+Acessar a máquina remota:
+```
+ssh-agent bash
+ssh-agent add ~/.ssh/arquivo
+ssh root@ipDaMaquinaRemota
+```
+
+Na máquina remota clonar o projeto:
+```
+git clone git@github.com:fabiocaettano/clean-architecture-001.git
+```
+
+Instalar as dependências:
+```
+cd clean-architecture-001
 . install.sh
+```
 
 # Executar os testes
+```
 npm run test
 ```

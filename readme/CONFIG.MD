@@ -4,11 +4,17 @@ Abaixo descrevo as etapas para criação do ambiente.
 
 ## 1.1 Arquivo *.gitignore*:
 
-Neste arquivo inclui os diretórios que não serão carregados no repositório git.
+Inclui os diretórios que não serão carregados no repositório git.
 
+Criar o arquivo na raiz do projeto:
 ```
 touch .gitignore
+```
 
+Incluir os diretórios:
+```
+echo "node_modules/" >> .gitignore
+echo "dist/" >> .gitignore
 ```
 
 ## 1.2 Instalação do TypeScript.
