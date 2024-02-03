@@ -1,4 +1,5 @@
 import CreateCustomerUseCase from "./create.customer.usecase";
+
 const input = {
   name: "John",
   address: {
@@ -53,12 +54,58 @@ describe("Unit test create customer use case", () => {
     
     const customerRepository = MockRepository();    
 
-    const customerCreateUseCase = new CreateCustomerUseCase(customerRepository);
-
+    input.name = "John"
     input.address.street = "";
+    const customerCreateUseCase = new CreateCustomerUseCase(customerRepository);                
 
     await expect(customerCreateUseCase.execute(input)).rejects.toThrow(
       "Street is required"
     );
   });
+
+  it("should thrown an error when number is missing", async () => {
+    
+    const customerRepository = MockRepository();    
+
+    input.name = "John"
+    input.address.street = "Street";
+    input.address.number = 0;
+    const customerCreateUseCase = new CreateCustomerUseCase(customerRepository);                
+
+    await expect(customerCreateUseCase.execute(input)).rejects.toThrow(
+      "Number is required"
+    );
+  });
+
+  it("should thrown an error when zip is missing", async () => {
+    
+    const customerRepository = MockRepository();    
+
+    input.name = "John"
+    input.address.street = "Street";
+    input.address.number = 123;
+    input.address.zip = "";
+    const customerCreateUseCase = new CreateCustomerUseCase(customerRepository);                
+
+    await expect(customerCreateUseCase.execute(input)).rejects.toThrow(
+      "Zip is required"
+    );
+  });
+
+  it("should thrown an error when city is missing", async () => {
+    
+    const customerRepository = MockRepository();    
+
+    input.name = "John"
+    input.address.street = "Street";
+    input.address.number = 123;
+    input.address.zip = "zip";
+    input.address.city = "";
+    const customerCreateUseCase = new CreateCustomerUseCase(customerRepository);                
+
+    await expect(customerCreateUseCase.execute(input)).rejects.toThrow(
+      "City is required"
+    );
+  });
+  
 });
