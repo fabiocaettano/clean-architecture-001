@@ -17,9 +17,10 @@ export default class Customer{
         if(this._name.length === 0){
             throw new Error("Name is required");
         }
+
         if(this._id.length === 0){
             throw new Error("Id is required");
-        }
+        }       
     }
 
     get Address(): Address {
