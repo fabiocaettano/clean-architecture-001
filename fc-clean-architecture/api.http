@@ -1,0 +1,21 @@
+
+POST http://localhost:3000/customer
+Content-Type: application/json
+
+{
+    "name" : "Michele",
+    "address" : {
+        "street" : "Rua C",
+        "city" : "São Paulo",
+        "number" : 10,
+        "zip" : "01012-987"
+    }    
+}
+
+###
+
+GET http://localhost:3000/customer
+
+###
+
+GET http://localhost:3000/customer/3665bc7b-8d78-4e38-a14a-3b72c3c2485e
