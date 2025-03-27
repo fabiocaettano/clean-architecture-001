@@ -1,9 +1,9 @@
 import { Sequelize } from "sequelize-typescript";
-import Customer from "../../../domain/customer/entity/customer";
-import Address from "../../../domain/customer/value-object/address";
 import CustomerModel from "../../../infrastructure/customer/repository/sequelize/customer.model";
 import CustomerRepository from "../../../infrastructure/customer/repository/sequelize/customer.repository";
 import FindCustomerUseCase from "./find.customer.usecase";
+import { InputCreateCustomerDto, InputFindCustomerDto } from "./find.customer.dto";
+import CreateCustomerUseCase from "../create/create.customer.usecase";
 
 describe("Test find customer use case", () => {
   let sequelize: Sequelize;
@@ -26,20 +26,25 @@ describe("Test find customer use case", () => {
 
   it("should find a customer", async () => {
     const customerRepository = new CustomerRepository();
-    const usecase = new FindCustomerUseCase(customerRepository);
+    const usecaseFind = new FindCustomerUseCase(customerRepository);
+    const usecaseCreate = new CreateCustomerUseCase(customerRepository);
 
-    const customer = new Customer("123", "John");
-    const address = new Address("Street", 123, "Zip", "City");
-    customer.changeAddress(address);
+    let input : InputCreateCustomerDto = {      
+      name: "John",
+      address: {
+        street: "Street",
+        number: 123,
+        zip: "Zip",
+        city: "City",
+      },
+    };   
 
-    await customerRepository.create(customer);
+    const result1 = await usecaseCreate.execute(input);          
 
-    const input = {
-      id: "123",
-    };
+    let id : InputFindCustomerDto = { id: result1.id };
 
     const output = {
-      id: "123",
+      id: result1.id,
       name: "John",
       address: {
         street: "Street",
@@ -49,8 +54,8 @@ describe("Test find customer use case", () => {
       },
     };
 
-    const result = await usecase.execute(input);
+    const result2 = await usecaseFind.execute(id)  
 
-    expect(result).toEqual(output);
+    expect(result2).toEqual(output);
   });
 });

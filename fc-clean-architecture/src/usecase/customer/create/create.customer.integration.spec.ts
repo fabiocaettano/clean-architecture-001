@@ -4,6 +4,7 @@ import CustomerRepository from "../../../infrastructure/customer/repository/sequ
 import CreateCustomerUseCase from "../../../usecase/customer/create/create.customer.usecase";
 import Customer from "../../../domain/customer/entity/customer";
 import Address from "../../../domain/customer/value-object/address";
+import { InputCreateCustomerDto } from "./create.customer.dto";
 
 describe("Test create customer use case", () => {
     let sequelize : Sequelize;
@@ -26,12 +27,9 @@ describe("Test create customer use case", () => {
     it("should create a customer", async () => {
         const customerRepository = new CustomerRepository();
         const usecase = new CreateCustomerUseCase(customerRepository);
-        const customer = new Customer("123", "John");
-        const address = new Address("Street", 123, "Zip", "City");
-        customer.changeAddress(address);        
-        await customerRepository.create(customer);        
-           
-        const input = {
+        let input :InputCreateCustomerDto;
+
+        input = {
             name: "John",
             address: {
               street: "Street",
