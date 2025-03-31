@@ -1,4 +1,12 @@
-export interface InputListCustomerDto {}
+export interface InputCreateCustomerDto {
+  name: string;
+  address: {
+    street: string;
+    number: number;
+    zip: string;
+    city: string;
+  };  
+}
 
 type Customer = {
   id: string;

@@ -1,9 +1,7 @@
 import { Sequelize } from "sequelize-typescript";
 import CustomerModel from "../../../infrastructure/customer/repository/sequelize/customer.model";
 import CustomerRepository from "../../../infrastructure/customer/repository/sequelize/customer.repository";
-import CreateCustomerUseCase from "../../../usecase/customer/create/create.customer.usecase";
-import Customer from "../../../domain/customer/entity/customer";
-import Address from "../../../domain/customer/value-object/address";
+import CreateCustomerUseCase from "./create.customer.usecase";
 import { InputCreateCustomerDto } from "./create.customer.dto";
 
 describe("Test create customer use case", () => {
@@ -28,7 +26,6 @@ describe("Test create customer use case", () => {
         const customerRepository = new CustomerRepository();
         const usecase = new CreateCustomerUseCase(customerRepository);
         let input :InputCreateCustomerDto;
-
         input = {
             name: "John",
             address: {

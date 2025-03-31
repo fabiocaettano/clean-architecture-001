@@ -38,7 +38,7 @@ describe("Test find customer use case", () => {
         city: "City",
       },
     };   
-
+    
     const result1 = await usecaseCreate.execute(input);          
 
     let id : InputFindCustomerDto = { id: result1.id };

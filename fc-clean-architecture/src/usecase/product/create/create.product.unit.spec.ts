@@ -55,7 +55,7 @@ const MockRepository = () => {
         )
     });
 
-    it("should throw an error when price musst be grater than zero", async() => {
+    it("should throw an error when price must be greater than zero", async() => {
         const productRepository = MockRepository();
         const createProductUseCase = new CreateProductUsecase(productRepository);
         input.name = "product a"
