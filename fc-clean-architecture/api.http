@@ -13,11 +13,24 @@ Content-Type: application/json
 }
 
 ###
+PUT http://localhost:3000/customer/77d00872-93be-4bcb-a86b-a70b02871e45
+Content-Type: application/json
 
+{
+    "name" : "Michele",
+    "address" : {
+        "street" : "Rua CC",
+        "city" : "São Paulo",
+        "number" : 20,
+        "zip" : "01012-987"
+    }    
+}
+
+
+###
 GET http://localhost:3000/customer
 
 ###
-
 GET http://localhost:3000/customer/3665bc7b-8d78-4e38-a14a-3b72c3c2485e
 
 ###
@@ -31,5 +44,17 @@ Content-Type: application/json
 }
 
 ###
+PUT http://localhost:3000/product/ff0c959e-e0e5-40dc-b77f-df5fe29ceaf4
+Content-Type: application/json
 
+{
+    "name" : "Product a",
+    "price" : 22.00,
+    "type" : "a"
+}
+
+###
 GET http://localhost:3000/product
+
+###
+GET http://localhost:3000/product/d6704409-55a3-451e-bc3d-dd36c1128ab3
