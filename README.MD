@@ -9,13 +9,13 @@ Da mesma forma que foram criados as operações: "create", "find", "list", "upda
 2. Implemente os testes de unidade e integração nos quatro use cases;
 3. A linguagem de programação para este desafio é TypeScript
 
-### Endpoint para Products
+### Desafio de Endpoint para Products
 
 1. Da mesma forma que foi implementada a listagem dos nossos Customers em nossa API, repita o mesmo processo e realize a listagem de Products;
 2. Não deixe de realizar o teste automatizado end-to-end;
 3. A linguagem de programação para este desafio é TypeScript
 
-### Notification Pattern para Products
+### Desafio de Notification Pattern para Products
 
 1. O notification pattern nos auxilia como um container acumulador de erros para que possamos de uma forma mais simples retornarmos nossos erros todos de uma vez evitando assim a geração excessiva de exceções.
 
