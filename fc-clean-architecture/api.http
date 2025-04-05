@@ -26,8 +26,8 @@ Content-Type: application/json
 
 {
     "name" : "Product 2",
-    "price" : 11.00,
-    "type" : "a"
+    "price" : 22.00,
+    "type" : "b"
 }
 
 ###
