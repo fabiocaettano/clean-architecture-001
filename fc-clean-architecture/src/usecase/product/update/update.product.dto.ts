@@ -4,8 +4,7 @@ export interface InputCreateProductDto {
     price: number;   
 }
 
-export interface InputUpdateProductDto {
-    type: string;
+export interface InputUpdateProductDto { 
     id: string;    
     name: string;
     price: number;    
