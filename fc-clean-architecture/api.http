@@ -19,3 +19,17 @@ GET http://localhost:3000/customer
 ###
 
 GET http://localhost:3000/customer/3665bc7b-8d78-4e38-a14a-3b72c3c2485e
+
+###
+POST http://localhost:3000/product
+Content-Type: application/json
+
+{
+    "name" : "Product 2",
+    "price" : 11.00,
+    "type" : "a"
+}
+
+###
+
+GET http://localhost:3000/product
