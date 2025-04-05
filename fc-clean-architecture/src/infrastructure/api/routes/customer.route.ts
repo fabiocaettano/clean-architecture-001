@@ -52,8 +52,8 @@ customerRoute.get("/", async (req: Request, res: Response) => {
   const usecase = new ListCustomerUseCase(new CustomerRepository());
   const output = await usecase.execute();
 
-  res.format({    
-    json: async () => res.send(output),    
+  res.format({        
+    json: async () => res.send(output),        
     xml: async () => res.send(CustomerPresenter.listXML(output)),
   });
 });
