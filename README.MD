@@ -6,14 +6,14 @@
 
 Da mesma forma que foram criados as operações: "create", "find", "list", "update" para "Customer", faça:
 1. Crie as operações mencionadas acima para nossa entidade: "Product";
-2. Implemente os testes de unidade e integração nos quatro use cases;
-3. A linguagem de programação para este desafio é TypeScript
+2. Implemente os testes de unidade e integração nos quatro use cases.
+
 
 ### Desafio de Endpoint para Products
 
 1. Da mesma forma que foi implementada a listagem dos nossos Customers em nossa API, repita o mesmo processo e realize a listagem de Products;
-2. Não deixe de realizar o teste automatizado end-to-end;
-3. A linguagem de programação para este desafio é TypeScript
+2. Não deixe de realizar o teste automatizado end-to-end.
+
 
 ### Desafio de Notification Pattern para Products
 
@@ -23,4 +23,9 @@ Da mesma forma que foram criados as operações: "create", "find", "list", "upda
 
 3. Adicione um teste que acumule dois erros ao mesmo tempo. 
 
-4. A linguagem de programação para este desafio é TypeScript
+
+
+### Desafio Validando Product
+
+1. Realizar o processo de validação na entidade Product seguindo o mesmo processo.
+
