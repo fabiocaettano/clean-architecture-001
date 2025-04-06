@@ -3,6 +3,7 @@ import { OutputListCustomerDto } from "../../../usecase/customer/list/list.custo
 import { OutputFindCustomerDto } from "../../../usecase/customer/find/find.customer.dto";
 
 export default class CustomerPresenter {
+  
   static listXML(data: OutputListCustomerDto): string {
     const xmlOption = {
       header: true,
